@@ -1,9 +1,11 @@
+import globals from "globals"
 import js from "@eslint/js"
 import vue from "eslint-plugin-vue"
 import tseslint from "typescript-eslint"
 import stylistic from "@stylistic/eslint-plugin"
 
 export default [
+  { languageOptions: { globals: globals.browser } },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...vue.configs["flat/recommended"],
