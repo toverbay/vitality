@@ -43,47 +43,6 @@ const store = useSystemStore()
           @input="store.updateSystemInfo({ version: ($event.target as HTMLInputElement).value })"
         >
       </div>
-
-      <fieldset class="border border-gray-700 rounded-lg p-4">
-        <legend class="text-sm text-gray-300 px-2">
-          Dice Mechanics (optional)
-        </legend>
-
-        <div class="flex items-center gap-3 mb-3">
-          <label class="flex items-center gap-2 text-sm text-gray-300">
-            <input
-              type="checkbox"
-              :checked="!!store.system.dice"
-              class="rounded bg-gray-800 border-gray-600 text-indigo-500 focus:ring-indigo-500"
-              @change="store.updateDice(($event.target as HTMLInputElement).checked ? { defaultDie: 'd20' } : undefined)"
-            >
-            Enable dice mechanics
-          </label>
-        </div>
-
-        <template v-if="store.system.dice">
-          <div class="space-y-3">
-            <div>
-              <label class="block text-sm text-gray-300 mb-1">Default Die</label>
-              <input
-                :value="store.system.dice.defaultDie"
-                placeholder="d20"
-                class="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-600 text-gray-100 placeholder-gray-500 focus:border-indigo-500 focus:outline-none"
-                @input="store.updateDice({ defaultDie: ($event.target as HTMLInputElement).value, modifier: store.system.dice?.modifier })"
-              >
-            </div>
-            <div>
-              <label class="block text-sm text-gray-300 mb-1">Modifier (optional)</label>
-              <input
-                :value="store.system.dice.modifier ?? ''"
-                placeholder="e.g. +{abilities.dexterity}"
-                class="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-600 text-gray-100 placeholder-gray-500 focus:border-indigo-500 focus:outline-none"
-                @input="store.updateDice({ defaultDie: store.system.dice!.defaultDie, modifier: ($event.target as HTMLInputElement).value || undefined })"
-              >
-            </div>
-          </div>
-        </template>
-      </fieldset>
     </div>
 
     <StepNavigation next-path="/builder/shared-options" />

@@ -37,8 +37,7 @@
                 System Info
               </h3>
               <p class="text-sm text-gray-400">
-                Name your system, set a version, and optionally configure dice
-                mechanics (like a default d20 roll).
+                Name your system, set a version, and choose an ID.
               </p>
             </div>
           </li>

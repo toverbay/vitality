@@ -18,7 +18,6 @@ function emptySystem(): SystemDefinition {
     id: uuid(),
     name: "",
     version: "1.0.0",
-    dice: undefined,
     sharedOptions: {},
     templates: [],
   }
@@ -46,10 +45,6 @@ export const useSystemStore = defineStore("system", () => {
     if (patch.id !== undefined) system.value.id = patch.id
     if (patch.name !== undefined) system.value.name = patch.name
     if (patch.version !== undefined) system.value.version = patch.version
-  }
-
-  function updateDice(dice: { defaultDie: string; modifier?: string } | undefined) {
-    system.value.dice = dice
   }
 
   // --- Shared Options ---
@@ -205,8 +200,6 @@ export const useSystemStore = defineStore("system", () => {
     if (clone.sharedOptions && Object.keys(clone.sharedOptions as object).length === 0) {
       delete clone.sharedOptions
     }
-    // Remove undefined dice
-    if (!clone.dice) delete clone.dice
     return JSON.stringify(clone, null, 2)
   }
 
@@ -228,7 +221,6 @@ export const useSystemStore = defineStore("system", () => {
     sharedOptionKeys,
     activeTemplate,
     updateSystemInfo,
-    updateDice,
     addSharedOptionList,
     removeSharedOptionList,
     renameSharedOptionList,

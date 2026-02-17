@@ -25,7 +25,6 @@ export type {
 } from "./entity"
 
 export type {
-  DiceMechanics,
   SharedOption,
   SystemDefinition,
 } from "./system"

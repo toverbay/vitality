@@ -17,7 +17,7 @@ The builder walks you through five steps. You can jump between them freely — n
 
 ### Step 1: System Info
 
-Set the basics: a **name** for your system, a **version** string, and an auto-generated **ID** (editable if you prefer your own). Optionally enable **dice mechanics** to define a default die (e.g. `d20`) and a modifier formula.
+Set the basics: a **name** for your system, a **version** string, and an auto-generated **ID** (editable if you prefer your own).
 
 ### Step 2: Shared Options
 

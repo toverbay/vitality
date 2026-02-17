@@ -17,7 +17,6 @@ export type {
   SectionData,
   EntityData,
   EntityInstance,
-  DiceMechanics,
   SharedOption,
   SystemDefinition,
 } from "./types"
